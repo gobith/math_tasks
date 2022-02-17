@@ -18,7 +18,7 @@ import {toggle_math_symbol} from "../stores/session-store";
     toggle_math_symbol(":")
   };
 </script>
-
+<div>test</div>
 <button on:click={pressedAddition}> + </button>
 <button on:click={pressedSubtraction}> - </button>
 <button on:click={pressedMultiplication}> x </button>
