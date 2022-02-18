@@ -29,71 +29,157 @@
   let value;
 </script>
 
-<label>
-  <input type="number" bind:value />
-</label>
-
-<div>
-  <div>
-    <button
-      on:click={() => {
-        numberPressed(1);
-      }}>1</button
-    >
-    <button
-      on:click={() => {
-        numberPressed(2);
-      }}>2</button
-    >
-    <button
-      on:click={() => {
-        numberPressed(3);
-      }}>3</button
-    >
-    <button on:click={backspacePressed}>&larr;</button>
-  </div>
-  <div>
-    <button
-      on:click={() => {
-        numberPressed(4);
-      }}>4</button
-    >
-    <button
-      on:click={() => {
-        numberPressed(5);
-      }}>5</button
-    >
-    <button
-      on:click={() => {
-        numberPressed(6);
-      }}>6</button
-    >
-  </div>
-  <div>
-    <button
-      on:click={() => {
-        numberPressed(7);
-      }}>7</button
-    >
-    <button
-      on:click={() => {
-        numberPressed(8);
-      }}>8</button
-    >
-    <button
-      on:click={() => {
-        numberPressed(9);
-      }}>9</button
-    >
-  </div>
+<div class="keyboard">
+  <input class="input" type="number" bind:value />
 
   <button
+    class="one"
+    on:click={() => {
+      numberPressed(1);
+    }}>1</button
+  >
+  <button
+    class="two"
+    on:click={() => {
+      numberPressed(2);
+    }}>2</button
+  >
+  <button
+    class="three"
+    on:click={() => {
+      numberPressed(3);
+    }}>3</button
+  >
+
+  <button
+    class="four"
+    on:click={() => {
+      numberPressed(4);
+    }}>4</button
+  >
+  <button
+    class="five"
+    on:click={() => {
+      numberPressed(5);
+    }}>5</button
+  >
+  <button
+    class="six"
+    on:click={() => {
+      numberPressed(6);
+    }}>6</button
+  >
+
+  <button
+    class="seven"
+    on:click={() => {
+      numberPressed(7);
+    }}>7</button
+  >
+  <button
+    class="eight"
+    on:click={() => {
+      numberPressed(8);
+    }}>8</button
+  >
+  <button
+    class="nine"
+    on:click={() => {
+      numberPressed(9);
+    }}>9</button
+  >
+
+  <button
+    class="zero"
     on:click={() => {
       numberPressed(0);
     }}>0</button
   >
-  <button on:click={enterPressed}>&crarr;</button>
+
+  <button class="backspace" on:click={backspacePressed}>&larr;</button>
+
+  <button class="enter" on:click={enterPressed}>&crarr;</button>
 </div>
 
 <style>
+  button {
+    padding: 15px 32px;
+    color: white;
+    box-sizing: border-box;
+    cursor: pointer;
+    text-align: center;
+    background-color: transparent;
+    font-size: 30px;
+  }
+
+  button:hover {
+    border-color: black;
+    color: black;
+  }
+
+  button:active {
+    border-color: black;
+    color: black;
+  }
+  .keyboard {
+    display: grid;
+    gap: 10px;
+    grid-template-areas:
+      "u u u u"
+      "a b c s"
+      "d e f ."
+      "g h i r"
+      "z . . r";
+  }
+  .one {
+    grid-area: a;
+  }
+  .two {
+    grid-area: b;
+  }
+  .three {
+    grid-area: c;
+  }
+  .four {
+    grid-area: d;
+  }
+  .five {
+    grid-area: e;
+  }
+  .six {
+    grid-area: f;
+  }
+  .seven {
+    grid-area: g;
+  }
+  .eight {
+    grid-area: h;
+  }
+  .nine {
+    grid-area: i;
+  }
+  .zero {
+    grid-area: z;
+  }
+
+  .input {
+    grid-area: u;
+    color: white;
+    font-size: 30px;
+    background-color: transparent;
+    text-align: center;
+  }
+
+  .enter {
+    grid-area: r;
+  }
+
+  .backspace {
+    grid-area: s;
+  }
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    display: none;
+  }
 </style>
