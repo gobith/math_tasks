@@ -9,4 +9,7 @@
 </div>
 
 <style>
+  div {
+    padding: 5px;
+  }
 </style>

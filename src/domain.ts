@@ -82,7 +82,7 @@ export class Division extends Task {
   }
 
   operator() {
-    return "&#247;";
+    return "÷";
   }
   check() {
     return this.value1 / this.value2 === this.answer;

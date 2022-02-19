@@ -42,7 +42,7 @@
 <svelte:window on:keydown={handleKeydown} />
 
 <div>
-  <button class="back" on:click={toggle_back}> &larr; </button>
+  <!-- <button class="back" on:click={toggle_back}> &larr; </button> -->
 
   <div class="task">{$task.task_string()}</div>
 
@@ -132,8 +132,8 @@
     text-align: center;
     font-size: 80px;
     color: white;
-    margin-bottom: 10px;
     margin-top: 10px;
+    margin-bottom: 10px;
   }
 
   button {
@@ -200,6 +200,7 @@
     font-size: 30px;
     background-color: transparent;
     text-align: center;
+    width: 100%;
   }
 
   .enter {
