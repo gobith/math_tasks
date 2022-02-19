@@ -21,8 +21,8 @@
 <div>
   <button on:click={pressedAddition}> + </button>
   <button on:click={pressedSubtraction}> - </button>
-  <button on:click={pressedMultiplication}> x </button>
-  <button on:click={pressedDivision}> : </button>
+  <button on:click={pressedMultiplication}>&#215;</button>
+  <button on:click={pressedDivision}>&#247;</button>
 </div>
 
 <style>

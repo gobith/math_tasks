@@ -4,7 +4,8 @@ export class Task {
   answer: number;
   outcome: boolean;
 
-  constructor() {}
+
+  constructor() { }
 
   operator() {
     return "";
@@ -28,21 +29,7 @@ export class Task {
     return false;
   }
 
-  color() {
-    let color;
-    console.log(this.outcome);
-    if (this.outcome === undefined) {
-      color = "white";
-    } else {
-      if (this.outcome) {
-        color = "green";
-      } else {
-        color = "red";
-      }
 
-      return color;
-    }
-  }
 }
 
 export class Addition extends Task {
@@ -95,7 +82,7 @@ export class Division extends Task {
   }
 
   operator() {
-    return ":";
+    return "&#247;";
   }
   check() {
     return this.value1 / this.value2 === this.answer;
