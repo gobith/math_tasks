@@ -28,7 +28,18 @@
   };
 
   let value;
+
+  const handleKeydown = (event) => {
+    console.log("calc", event);
+    let keyCode = event.keyCode;
+
+    if (keyCode >= 48 && keyCode <= 57) numberPressed(parseInt(event.key));
+    if (keyCode === 8) backspacePressed();
+    if (keyCode === 13) enterPressed();
+  };
 </script>
+
+<svelte:window on:keydown={handleKeydown} />
 
 <div>
   <button class="back" on:click={toggle_back}> &larr; </button>

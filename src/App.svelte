@@ -1,10 +1,8 @@
 <script lang="ts">
-  import { task, handleKeydown } from "./stores/session-store";
+  import { task } from "./stores/session-store";
   import General from "./components/General.svelte";
   import Specific from "./components/Specific.svelte";
 </script>
-
-<svelte:window on:keydown={handleKeydown} />
 
 <div class="center">
   {#if $task === null}
