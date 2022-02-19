@@ -13,7 +13,7 @@
   <div>{task.operator()}</div>
   <div>{task.value2}</div>
   <div>=</div>
-  {#if task.anser}
+  {#if task.answer}
     <div>{task.answer}</div>
   {/if}
 </li>
@@ -27,6 +27,7 @@
 
   div {
     text-align: center;
+    color: white;
   }
 
   .correct {
