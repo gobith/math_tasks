@@ -7,21 +7,21 @@ const operations = {
   ":": (c: number) => get(value1) / get(value2) === c,
 };
 
-export const session = writable("");
+export const operator = writable("");
 
 export const value1 = writable(7);
 export const value2 = writable(6);
 
-export const toggle_math_symbol = (symbol: string) => {
-  session.update(() => {
+export const toggle_operator = (symbol: string) => {
+  operator.update(() => {
     return symbol;
   });
 };
 
 export const toggle_back = () => {
-  toggle_math_symbol("");
+  toggle_operator("");
 };
 
 export const check = (outcome) => {
-  return operations[get(session)](outcome);
+  return operations[get(operator)](outcome);
 };

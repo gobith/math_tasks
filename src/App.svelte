@@ -1,11 +1,11 @@
 <script lang="ts">
-  import { session } from "./stores/session-store";
+  import { operator } from "./stores/session-store";
   import General from "./components/General.svelte";
   import Specific from "./components/Specific.svelte";
 </script>
 
 <div class="center">
-  {#if $session === ""}
+  {#if $operator === ""}
     <General />
   {:else}
     <Specific />

@@ -1,6 +1,6 @@
 <script lang="ts">
   import {
-    session,
+    operator,
     value1,
     value2,
     toggle_back,
@@ -12,7 +12,7 @@
 <div class="center">
   <button class="back" on:click={toggle_back}> &larr; </button>
 
-  <div class="task">{$value1} {$session} {$value2}</div>
+  <div class="task">{$value1} {$operator} {$value2}</div>
 
   <Keyboard />
 </div>

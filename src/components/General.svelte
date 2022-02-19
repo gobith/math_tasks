@@ -1,20 +1,20 @@
 <script lang="ts">
-  import { toggle_math_symbol } from "../stores/session-store";
+  import { toggle_operator } from "../stores/session-store";
 
   const pressedAddition = () => {
-    toggle_math_symbol("+");
+    toggle_operator("+");
   };
 
   const pressedSubtraction = () => {
-    toggle_math_symbol("-");
+    toggle_operator("-");
   };
 
   const pressedMultiplication = () => {
-    toggle_math_symbol("x");
+    toggle_operator("x");
   };
 
   const pressedDivision = () => {
-    toggle_math_symbol(":");
+    toggle_operator(":");
   };
 </script>
 
