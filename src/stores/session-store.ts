@@ -43,3 +43,7 @@ export const check_task = (answer): void => {
 
   new_task();
 };
+
+export const handleKeydown = (event) => {
+  console.log(event)
+}
