@@ -217,7 +217,6 @@
     cursor: default;
     flex: 0 0 auto;
     align-self: stretch;
-    -webkit-user-select: none;
     opacity: 0;
     pointer-events: none;
     -webkit-user-modify: read-only;
