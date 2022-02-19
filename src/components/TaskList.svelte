@@ -5,18 +5,17 @@
   console.log($tasks);
 </script>
 
-<div>
-  <ul>
-    {#each $tasks as task}
-      <Task task={task} />
-    {/each}
-  </ul>
-</div> 
+<ol>
+  {#each $tasks as task}
+    <Task {task} />
+  {/each}
+</ol>
 
 <style>
-  div {
+  ol {
     border: solid 1px white;
     border-radius: 2px;
     margin-right: 10px;
+    list-style: none;
   }
 </style>
