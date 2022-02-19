@@ -11,7 +11,7 @@ export const toggle_operator = (operatorString: string) => {
     return operatorString;
   });
 
-  new_task()
+  new_task();
 };
 
 const new_task = (): void => {
@@ -26,14 +26,6 @@ const new_task = (): void => {
   task.update(() => {
     return new_task;
   });
-
-  if (new_task) {
-    tasks.update((task_array) => {
-      let newArray = [...task_array];
-      newArray.push(new_task);
-      return newArray;
-    });
-  }
 };
 
 export const toggle_back = () => {
@@ -42,6 +34,12 @@ export const toggle_back = () => {
 
 export const check_task = (answer): void => {
   get(task).check_answer(answer);
-  console.log(get(task));
+
+  tasks.update((task_array) => {
+    let newArray = [...task_array];
+    newArray.unshift(get(task));
+    return newArray;
+  });
+
   new_task();
 };

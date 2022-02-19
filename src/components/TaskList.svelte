@@ -5,17 +5,17 @@
   console.log($tasks);
 </script>
 
-<ol>
+<ul>
   {#each $tasks as task}
     <Task {task} />
   {/each}
-</ol>
+</ul>
 
 <style>
-  ol {
+  ul {
     border: solid 1px white;
     border-radius: 2px;
-    margin-right: 10px;
     list-style: none;
+    padding: 0
   }
 </style>

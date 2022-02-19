@@ -13,6 +13,7 @@
     div {
         display: grid;
         grid-template-columns: 1fr 3fr;
+        gap: 10px;
         
     }
   

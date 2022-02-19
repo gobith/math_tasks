@@ -27,6 +27,22 @@ export class Task {
   check(): boolean {
     return false;
   }
+
+  color() {
+    let color;
+    console.log(this.outcome);
+    if (this.outcome === undefined) {
+      color = "white";
+    } else {
+      if (this.outcome) {
+        color = "green";
+      } else {
+        color = "red";
+      }
+
+      return color;
+    }
+  }
 }
 
 export class Addition extends Task {
@@ -53,14 +69,11 @@ export class Subtraction extends Task {
   }
 
   randomize(): void {
-  
     let val1 = randomValue();
     let val2 = randomValue();
-    this.value1 = Math.max(val1 , val2);
-    this.value2 = Math.min(val1 , val2);
+    this.value1 = Math.max(val1, val2);
+    this.value2 = Math.min(val1, val2);
   }
-
-
 }
 
 export class Multiplication extends Task {
@@ -89,13 +102,11 @@ export class Division extends Task {
   }
 
   randomize(): void {
-  
     let val1 = randomValue();
     let val2 = randomValue();
     this.value1 = val1 * val2;
     this.value2 = val1;
   }
-
 }
 
 const taskClasses = () => {
@@ -108,7 +119,6 @@ const task_for_operator = (operator: string) => {
 };
 
 export const random_task_for_operator = (operator: string) => {
-
   let task = task_for_operator(operator);
   task.randomize();
   return task;
