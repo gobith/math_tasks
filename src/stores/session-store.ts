@@ -8,13 +8,12 @@ const operations = {
 };
 
 export const operator = writable("");
-
 export const value1 = writable(7);
 export const value2 = writable(6);
 
-export const toggle_operator = (symbol: string) => {
+export const toggle_operator = (operatorString: string) => {
   operator.update(() => {
-    return symbol;
+    return operatorString;
   });
 };
 
@@ -23,5 +22,6 @@ export const toggle_back = () => {
 };
 
 export const check = (outcome) => {
-  return operations[get(operator)](outcome);
+  let bool = operations[get(operator)](outcome);
+  return bool
 };
