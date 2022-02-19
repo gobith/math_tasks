@@ -108,9 +108,7 @@ const task_for_operator = (operator: string) => {
 };
 
 export const random_task_for_operator = (operator: string) => {
-  if (operator === "") {
-    return null;
-  }
+
   let task = task_for_operator(operator);
   task.randomize();
   return task;

@@ -1,39 +1,12 @@
 <script lang="ts">
-  import {
-    task , toggle_back
-  } from "../stores/session-store";
+  export let task;
 
-  import Keyboard from "./Keyboard.svelte";
+
+console.log("the task = " , task)
+
 </script>
 
-<div class="center">
-  <button class="back" on:click={toggle_back}> &larr; </button>
-
-  <div class="task">{$task.task_string()}</div>
-
-  <Keyboard />
-</div>
+<li>{task.task_string()}</li>
 
 <style>
-  .center {
-    display: grid;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .back {
-    color: white;
-    box-sizing: border-box;
-    cursor: pointer;
-    text-align: left;
-    background-color: transparent;
-    border: none;
-  }
-  .task {
-    text-align: center;
-    font-size: 80px;
-    color: white;
-    margin-bottom: 10px;
-    margin-top: 10px;
-  }
 </style>

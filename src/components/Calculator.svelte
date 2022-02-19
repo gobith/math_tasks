@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { check_task } from "../stores/session-store";
+  import { task, toggle_back, check_task } from "../stores/session-store";
 
   const numberPressed = (number) => {
     if (value) {
@@ -30,79 +30,101 @@
   let value;
 </script>
 
-<div class="keyboard">
-  <input class="input" type="number" bind:value />
+<div>
+  <button class="back" on:click={toggle_back}> &larr; </button>
 
-  <button
-    class="one"
-    on:click={() => {
-      numberPressed(1);
-    }}>1</button
-  >
-  <button
-    class="two"
-    on:click={() => {
-      numberPressed(2);
-    }}>2</button
-  >
-  <button
-    class="three"
-    on:click={() => {
-      numberPressed(3);
-    }}>3</button
-  >
+  <div class="task">{$task.task_string()}</div>
 
-  <button
-    class="four"
-    on:click={() => {
-      numberPressed(4);
-    }}>4</button
-  >
-  <button
-    class="five"
-    on:click={() => {
-      numberPressed(5);
-    }}>5</button
-  >
-  <button
-    class="six"
-    on:click={() => {
-      numberPressed(6);
-    }}>6</button
-  >
+  <div class="keyboard">
+    <input class="input" type="number" bind:value />
 
-  <button
-    class="seven"
-    on:click={() => {
-      numberPressed(7);
-    }}>7</button
-  >
-  <button
-    class="eight"
-    on:click={() => {
-      numberPressed(8);
-    }}>8</button
-  >
-  <button
-    class="nine"
-    on:click={() => {
-      numberPressed(9);
-    }}>9</button
-  >
+    <button
+      class="one"
+      on:click={() => {
+        numberPressed(1);
+      }}>1</button
+    >
+    <button
+      class="two"
+      on:click={() => {
+        numberPressed(2);
+      }}>2</button
+    >
+    <button
+      class="three"
+      on:click={() => {
+        numberPressed(3);
+      }}>3</button
+    >
 
-  <button
-    class="zero"
-    on:click={() => {
-      numberPressed(0);
-    }}>0</button
-  >
+    <button
+      class="four"
+      on:click={() => {
+        numberPressed(4);
+      }}>4</button
+    >
+    <button
+      class="five"
+      on:click={() => {
+        numberPressed(5);
+      }}>5</button
+    >
+    <button
+      class="six"
+      on:click={() => {
+        numberPressed(6);
+      }}>6</button
+    >
 
-  <button class="backspace" on:click={backspacePressed}>&larr;</button>
+    <button
+      class="seven"
+      on:click={() => {
+        numberPressed(7);
+      }}>7</button
+    >
+    <button
+      class="eight"
+      on:click={() => {
+        numberPressed(8);
+      }}>8</button
+    >
+    <button
+      class="nine"
+      on:click={() => {
+        numberPressed(9);
+      }}>9</button
+    >
 
-  <button class="enter" on:click={enterPressed}>&crarr;</button>
+    <button
+      class="zero"
+      on:click={() => {
+        numberPressed(0);
+      }}>0</button
+    >
+
+    <button class="backspace" on:click={backspacePressed}>&larr;</button>
+
+    <button class="enter" on:click={enterPressed}>&crarr;</button>
+  </div>
 </div>
 
 <style>
+  .back {
+    color: white;
+    box-sizing: border-box;
+    cursor: pointer;
+    text-align: left;
+    background-color: transparent;
+    border: none;
+  }
+  .task {
+    text-align: center;
+    font-size: 80px;
+    color: white;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+
   button {
     padding: 15px 32px;
     color: white;

@@ -4,19 +4,36 @@ import { get, writable } from "svelte/store";
 
 export const operator = writable("");
 export const task = writable(null);
+export const tasks = writable([]);
 
 export const toggle_operator = (operatorString: string) => {
   operator.update(() => {
     return operatorString;
   });
 
-  new_task();
+  new_task()
 };
 
 const new_task = (): void => {
+  let new_task = null;
+
+  if (get(operator) !== "") {
+    new_task = random_task_for_operator(get(operator));
+  }
+
+  console.log(new_task);
+
   task.update(() => {
-    return random_task_for_operator(get(operator));
+    return new_task;
   });
+
+  if (new_task) {
+    tasks.update((task_array) => {
+      let newArray = [...task_array];
+      newArray.push(new_task);
+      return newArray;
+    });
+  }
 };
 
 export const toggle_back = () => {
