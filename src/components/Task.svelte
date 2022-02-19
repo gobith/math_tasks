@@ -1,9 +1,6 @@
 <script lang="ts">
   import {
-    operator,
-    value1,
-    value2,
-    toggle_back,
+    task , toggle_back
   } from "../stores/session-store";
 
   import Keyboard from "./Keyboard.svelte";
@@ -12,7 +9,7 @@
 <div class="center">
   <button class="back" on:click={toggle_back}> &larr; </button>
 
-  <div class="task">{$value1} {$operator} {$value2}</div>
+  <div class="task">{$task.task_string()}</div>
 
   <Keyboard />
 </div>

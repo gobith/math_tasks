@@ -1,14 +1,14 @@
 <script lang="ts">
-  import { operator } from "./stores/session-store";
+  import { task } from "./stores/session-store";
   import General from "./components/General.svelte";
-  import Specific from "./components/Specific.svelte";
+  import Task from "./components/Task.svelte";
 </script>
 
 <div class="center">
-  {#if $operator === ""}
+  {#if $task === null}
     <General />
   {:else}
-    <Specific />
+    <Task />
   {/if}
 </div>
 

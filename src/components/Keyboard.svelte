@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { check } from "../stores/session-store";
+  import { check_task } from "../stores/session-store";
 
   const numberPressed = (number) => {
     if (value) {
@@ -10,7 +10,8 @@
   };
 
   const enterPressed = () => {
-    console.log(check(value));
+    check_task(value);
+    value = undefined;
   };
 
   const backspacePressed = () => {
