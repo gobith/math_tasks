@@ -12,7 +12,7 @@
 <div class="center">
   <button on:click={toggle_back}> &larr; </button>
 
-  <div>{$value1} {$session.math_symbol} {$value2}</div>
+  <div class="task">{$value1} {$session.math_symbol} {$value2}</div>
 
   <Keyboard />
 </div>
@@ -22,5 +22,13 @@
     display: grid;
     align-items: center;
     justify-content: center;
+  }
+
+  .task {
+    text-align: center;
+    font-size: 60px;
+    color: white;
+    margin-bottom: 10px;
+    margin-top: 10px;
   }
 </style>

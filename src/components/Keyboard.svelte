@@ -129,7 +129,7 @@
       "a b c s"
       "d e f ."
       "g h i r"
-      "z . . r";
+      ". z . r";
   }
   .one {
     grid-area: a;
@@ -177,9 +177,15 @@
   .backspace {
     grid-area: s;
   }
-
-  input::-webkit-outer-spin-button,
   input::-webkit-inner-spin-button {
-    display: none;
+    -webkit-appearance: inner-spin-button;
+    display: inline-block;
+    cursor: default;
+    flex: 0 0 auto;
+    align-self: stretch;
+    -webkit-user-select: none;
+    opacity: 0;
+    pointer-events: none;
+    -webkit-user-modify: read-only;
   }
 </style>
