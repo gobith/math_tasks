@@ -23,9 +23,14 @@
     background-color: #006994;
     position: relative;
   }
-  .center {
+  .center2 {
     display: grid;
     align-items: center;
     justify-content: center;
+  }
+
+  .center {
+    margin: auto;
+    width: 100vw;
   }
 </style>

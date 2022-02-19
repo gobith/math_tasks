@@ -46,9 +46,9 @@
 
   <div class="task">{$task.task_string()}</div>
 
-  <div class="keyboard">
-    <input class="input" type="number" bind:value />
+  <input class="input" type="number" bind:value />
 
+  <div class="keyboard">
     <button
       class="one"
       on:click={() => {
@@ -137,7 +137,6 @@
   }
 
   button {
-    padding: 15px 32px;
     color: white;
     box-sizing: border-box;
     cursor: pointer;
@@ -159,7 +158,6 @@
     display: grid;
     gap: 10px;
     grid-template-areas:
-      "u u u u"
       "a b c s"
       "d e f ."
       "g h i r"
