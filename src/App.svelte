@@ -5,7 +5,7 @@
 </script>
 
 <div class="center">
-  {#if $session.math_symbol === ""}
+  {#if $session === ""}
     <General />
   {:else}
     <Specific />

@@ -10,9 +10,9 @@
 </script>
 
 <div class="center">
-  <button on:click={toggle_back}> &larr; </button>
+  <button class="back" on:click={toggle_back}> &larr; </button>
 
-  <div class="task">{$value1} {$session.math_symbol} {$value2}</div>
+  <div class="task">{$value1} {$session} {$value2}</div>
 
   <Keyboard />
 </div>
@@ -24,9 +24,17 @@
     justify-content: center;
   }
 
+  .back {
+    color: white;
+    box-sizing: border-box;
+    cursor: pointer;
+    text-align: left;
+    background-color: transparent;
+    border: none;
+  }
   .task {
     text-align: center;
-    font-size: 60px;
+    font-size: 80px;
     color: white;
     margin-bottom: 10px;
     margin-top: 10px;

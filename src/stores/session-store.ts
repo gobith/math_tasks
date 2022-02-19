@@ -7,14 +7,14 @@ const operations = {
   ":": (c: number) => get(value1) / get(value2) === c,
 };
 
-export const session = writable({ math_symbol: "" });
+export const session = writable("");
 
 export const value1 = writable(7);
 export const value2 = writable(6);
 
 export const toggle_math_symbol = (symbol: string) => {
   session.update(() => {
-    return { math_symbol: symbol };
+    return symbol;
   });
 };
 
@@ -23,5 +23,5 @@ export const toggle_back = () => {
 };
 
 export const check = (outcome) => {
-  return operations[get(session).math_symbol](outcome);
+  return operations[get(session)](outcome);
 };
